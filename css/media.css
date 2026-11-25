@@ -1,0 +1,195 @@
+
+/* Responsive layout fixes for the GameArena page.
+   This Alpha build uses breakpoint prefixes such as lg:col-6. */
+
+@media (min-width: 1024px) {
+  .hero .row {
+    align-items: center;
+  }
+
+  .hero .col-lg-6,
+  .hero .lg\:col-6 {
+    min-width: 0;
+  }
+
+  .site-header > .container > .d-flex {
+    min-height: 48px;
+  }
+
+  .site-header nav {
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .section-head {
+    text-align: center;
+  }
+
+  .team-members .row,
+  #team-members .row {
+    align-items: stretch;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .hero {
+    min-height: auto;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero .row {
+    align-items: center;
+  }
+
+  .site-header .brand {
+    font-size: 1.1rem;
+  }
+
+  .site-header nav {
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .site-header {
+    position: fixed;
+    inset: 0 0 auto;
+  }
+
+  .mobile-menu {
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+  }
+
+  .hero {
+    padding-top: 7.5rem;
+  }
+
+  .hero .row {
+    row-gap: 2.5rem;
+  }
+
+  .hero-title {
+    line-height: 1.15;
+  }
+
+  .hero-frame {
+    max-width: 680px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+    background-attachment: scroll;
+  }
+
+  .hero .row {
+    text-align: center;
+  }
+
+  .hero .hero-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .hero-badge {
+    transform: scale(.88);
+    transform-origin: bottom right;
+  }
+
+  .section {
+    padding-block: 4rem;
+  }
+
+  .section-head {
+    margin-bottom: 2rem;
+  }
+
+  .games-carousel {
+    overflow: hidden;
+  }
+
+  .game-slide {
+    min-width: 0;
+  }
+
+  .game-card {
+    min-height: 250px;
+  }
+
+  .member {
+    min-height: 320px;
+  }
+
+  .panel,
+  .community {
+    padding: 1.35rem;
+  }
+
+  .footer {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .brand {
+    font-size: 1.05rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hero-badge {
+    right: .25rem;
+    bottom: .25rem;
+  }
+
+  .eyebrow::before,
+  .eyebrow::after {
+    width: 1.5rem;
+  }
+
+  .section-head h2 {
+    font-size: 1.65rem;
+  }
+
+  .carousel-controls {
+    gap: .5rem;
+  }
+
+  .game-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Fix the What We Do grid on large screens.
+   The custom .row-cols-2 rule in style.css was overriding Alpha's
+   lg:row-cols-4 utility because both selectors had equal specificity. */
+@media (min-width: 1024px) {
+  #what-we-do .row.lg\:row-cols-4 > .col {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
